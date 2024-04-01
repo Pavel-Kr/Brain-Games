@@ -3,9 +3,13 @@ import math
 
 
 def is_prime(num: int):
-    for i in range(2, math.ceil(math.sqrt(num)) + 1):
+    if num == 2:
+        return True
+    i = 2
+    while i <= math.ceil(math.sqrt(num)):
         if num % i == 0:
             return False
+        i += 1
     return True
 
 
