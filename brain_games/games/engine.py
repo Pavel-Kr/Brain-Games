@@ -1,9 +1,9 @@
-from brain_games.scripts.brain_games import main as welcome
+from brain_games.cli import welcome_user
 import prompt
 
 
 def run(game_description: str, questions: list):
-    user_name = welcome()
+    user_name = welcome_user()
     print(game_description)
     for question, correct_answer in questions:
         print(f"Question: {question}")
