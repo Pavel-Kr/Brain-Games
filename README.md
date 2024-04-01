@@ -8,3 +8,5 @@
 <a href="https://asciinema.org/a/tUOC85vHFnMKujuWy5EtuMlOa">Brain-calc asciinema</a>
 
 <a href="https://asciinema.org/a/JmYR5ZwRDbJQlyXk8EKw2oxGV">Brain-gcd asciinema</a>
+
+<a href="https://asciinema.org/a/TmLBwW8LoixJsJ2taxwVaCwlp">Brain-progression asciinema</a>
