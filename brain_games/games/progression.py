@@ -1,6 +1,9 @@
 import random
 
 
+game_description = "What number is missing in the progression?"
+
+
 def generate_question():
     progression_len = 10
     start = random.randint(1, 20)
@@ -16,11 +19,4 @@ def generate_question():
             progression.append(str(elem))
         elem += step
     question = " ".join(progression)
-    return (question, correct_answer)
-
-
-def generate_questions(questions_count=3):
-    questions = []
-    for i in range(questions_count):
-        questions.append(generate_question())
-    return questions
+    return question, correct_answer

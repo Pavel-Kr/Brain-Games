@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 import brain_games.games.engine as engine
-from brain_games.games.calc import generate_questions
+from brain_games.games import calc
 
 
 def main():
-    game_description = "What is the result of the expression?"
-    questions = generate_questions()
-    engine.run(game_description, questions)
+    engine.run(calc)
