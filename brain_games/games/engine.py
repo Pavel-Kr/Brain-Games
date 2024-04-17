@@ -2,21 +2,15 @@ from brain_games.cli import welcome_user
 import prompt
 
 
-def generate_questions(game_module):
-    questions = []
-    questions_count = 3
-    for i in range(questions_count):
-        question = game_module.generate_question()
-        questions.append(question)
-    return questions
+QUESTIONS_COUNT = 3
 
 
 def run(game_module):
     user_name = welcome_user()
-    game_description = game_module.game_description
+    game_description = game_module.DESCRIPTION
     print(game_description)
-    questions = generate_questions(game_module)
-    for question, correct_answer in questions:
+    for _ in range(QUESTIONS_COUNT):
+        question, correct_answer = game_module.generate_question()
         print(f"Question: {question}")
         user_answer = prompt.string("Your answer: ")
         if user_answer == correct_answer:

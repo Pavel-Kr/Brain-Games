@@ -2,8 +2,10 @@ import random
 import math
 
 
-game_description = 'Answer "yes" if given number '\
+DESCRIPTION = 'Answer "yes" if given number '\
     'is prime. Otherwise answer "no".'
+MIN_NUMBER = 2
+MAX_NUMBER = 100
 
 
 def is_prime(num: int):
@@ -18,9 +20,7 @@ def is_prime(num: int):
 
 
 def generate_question():
-    min_number = 2
-    max_number = 100
-    num = random.randint(min_number, max_number)
+    num = random.randint(MIN_NUMBER, MAX_NUMBER)
     question = str(num)
-    correct_answer = is_prime(num) and "yes" or "no"
+    correct_answer = is_prime(num) and 'yes' or 'no'
     return question, correct_answer

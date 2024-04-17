@@ -1,21 +1,22 @@
 import random
 
 
-game_description = "What is the result of the expression?"
+DESCRIPTION = 'What is the result of the expression?'
+MIN_NUMBER = 1
+MAX_NUMBER = 25
+OPERATIONS = ['+', '-', '*']
 
 
 def generate_question():
-    min_number = 1
-    max_number = 50
-    operations = "+-*"
-    left_op = random.randint(min_number, max_number)
-    right_op = random.randint(min_number, max_number)
-    operation = random.choice(operations)
-    # Just to make the game a little bit easier
-    # (Imagine counting something like 48 * 23 in your head...)
-    if operation == "*":
-        left_op //= 2
-        right_op //= 2
-    question = f"{left_op} {operation} {right_op}"
-    correct_answer = str(eval(question))
+    left_op = random.randint(MIN_NUMBER, MAX_NUMBER)
+    right_op = random.randint(MIN_NUMBER, MAX_NUMBER)
+    operation = random.choice(OPERATIONS)
+    question = f'{left_op} {operation} {right_op}'
+    if operation == '+':
+        correct_answer = left_op + right_op
+    elif operation == '-':
+        correct_answer = left_op - right_op
+    elif operation == '*':
+        correct_answer = left_op * right_op
+    correct_answer = str(correct_answer)
     return question, correct_answer
