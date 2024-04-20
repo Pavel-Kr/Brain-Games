@@ -12,15 +12,10 @@ MAX_STEP = 5
 def generate_question():
     start = random.randint(MIN_START, MAX_START)
     step = random.randint(MIN_STEP, MAX_STEP)
-    elem = start
+    stop = start + step * PROGRESSION_LEN
+    progression = list(map(str, range(start, stop, step)))
     missing_elem = random.randint(0, PROGRESSION_LEN - 1)
-    progression = []
-    for j in range(PROGRESSION_LEN):
-        if j == missing_elem:
-            progression.append('..')
-            correct_answer = str(elem)
-        else:
-            progression.append(str(elem))
-        elem += step
+    correct_answer = progression[missing_elem]
+    progression[missing_elem] = '..'
     question = ' '.join(progression)
     return question, correct_answer
