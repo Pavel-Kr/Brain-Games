@@ -9,7 +9,9 @@ MAX_NUMBER = 100
 
 
 def is_prime(num: int):
-    if num == 2:
+    if num <= 1:
+        return False
+    elif num == 2:
         return True
     i = 2
     while i <= math.ceil(math.sqrt(num)):

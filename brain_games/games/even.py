@@ -7,9 +7,12 @@ MIN_NUMBER = 1
 MAX_NUMBER = 100
 
 
+def is_even(num):
+    return num % 2 == 0
+
+
 def generate_question():
     num = random.randint(MIN_NUMBER, MAX_NUMBER)
-    is_even = num % 2 == 0
     question = str(num)
-    correct_answer = is_even and 'yes' or 'no'
+    correct_answer = is_even(num) and 'yes' or 'no'
     return question, correct_answer
